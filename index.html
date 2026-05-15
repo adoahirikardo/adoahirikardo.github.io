@@ -9,6 +9,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
+    /* ── WIB CLOCK ── */
+    .wib-clock-bar {
+      text-align:center;
+      padding:14px 0 2px;
+      margin-bottom:0;
+    }
+    .wib-clock-pill {
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      font-size:.72rem;
+      font-weight:600;
+      color:var(--secondary);
+      background:var(--sec-cnt);
+      padding:6px 16px;
+      border-radius:99px;
+      border:1px solid var(--outline-var);
+      letter-spacing:.03em;
+      transition:background .35s,color .35s,border-color .35s;
+    }
+    .wib-clock-time {
+      font-size:.85rem;
+      font-weight:800;
+      color:var(--primary);
+      font-variant-numeric:tabular-nums;
+      letter-spacing:.04em;
+    }
+    .wib-dot {
+      width:5px;height:5px;
+      border-radius:50%;
+      background:var(--primary);
+      opacity:.55;
+    }
+
     /* ── LIGHT ── */
     :root {
       --bg:          #FAF6EF;
@@ -117,17 +151,17 @@
     .profile-section{text-align:center;padding:52px 0 26px}
 
     .profile-img {
-      width:92px;height:92px;
-      border-radius:20px;
+      width:128px;height:128px;
+      border-radius:26px;
       object-fit:cover;
       display:block;
       margin:0 auto 18px;
-      box-shadow:0 4px 20px rgba(103,80,164,.22),0 0 0 3px var(--sec-cnt);
+      box-shadow:0 6px 28px rgba(103,80,164,.28),0 0 0 4px var(--sec-cnt);
       transition:box-shadow .35s;
     }
     .profile-img-fallback {
-      width:92px;height:92px;
-      border-radius:20px;
+      width:128px;height:128px;
+      border-radius:26px;
       background:linear-gradient(135deg,var(--sec-cnt),var(--primary-cnt));
       margin:0 auto 18px;
       display:none;
@@ -436,6 +470,15 @@
 
 <div class="container">
 
+  <!-- ── WIB CLOCK ── -->
+  <div class="wib-clock-bar fade-up">
+    <div class="wib-clock-pill">
+      <span class="wib-dot"></span>
+      <span>WIB</span>
+      <span class="wib-clock-time" id="wib-time">--:--:--</span>
+    </div>
+  </div>
+
   <!-- ── PROFILE ── -->
   <div class="profile-section fade-up">
     <img src="profil.jpg" alt="Ado Ahi Rikardo" class="profile-img" id="profile-img"
@@ -532,7 +575,7 @@
   <div class="section fade-up">
     <div class="section-header">Writing Platform</div>
 
-    <a href="https://bsky.app/profile/verlanovich.shy.cat" target="_blank" rel="noopener" class="link-card">
+    <a href="https://bsky.app/profile/verlanovich.codeberg.page" target="_blank" rel="noopener" class="link-card">
       <div class="link-body">
         <div class="link-platform">Bluesky</div>
         <div class="link-display">Verlanovich</div>
@@ -630,7 +673,7 @@
     <a href="https://id.pinterest.com/ahansreinhard/" target="_blank" rel="noopener" class="link-card">
       <div class="link-body">
         <div class="link-platform">Pinterest</div>
-        <div class="link-display">Adolf Hans Reinhard</div>
+        <div class="link-display">Adolfe Ruinheart</div>
         <div class="link-labels"><span class="label-chip">Passive User</span></div>
       </div>
       <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -676,6 +719,7 @@
     <a href="https://www.last.fm/user/AdolfeHans" target="_blank" rel="noopener" class="link-card">
       <div class="link-body">
         <div class="link-platform">Last.FM</div>
+        <div class="link-display">AdolfeHans · Adolf Hans Reinhard</div>
         <div class="link-labels"><span class="label-chip">Music Tracker</span></div>
       </div>
       <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -684,6 +728,7 @@
     <a href="https://napoleon1244.github.io/myRadio/" target="_blank" rel="noopener" class="link-card">
       <div class="link-body">
         <div class="link-platform">myRadio</div>
+        <div class="link-display">R/a/dio &amp; LISTEN.moe</div>
         <div class="link-labels"><span class="label-chip">Personal Web Radio</span></div>
       </div>
       <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -692,6 +737,7 @@
     <a href="https://adoahirikardo.imgbb.com/albums" target="_blank" rel="noopener" class="link-card">
       <div class="link-body">
         <div class="link-platform">MY ART COLLECTION</div>
+        <div class="link-display">Adolf Hans Reinhard</div>
         <div class="link-labels"><span class="label-chip">Artworks — ImgBB</span></div>
       </div>
       <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -700,6 +746,7 @@
     <a href="https://justpaste.it/verlanlink" target="_blank" rel="noopener" class="link-card">
       <div class="link-body">
         <div class="link-platform">Kumpulan Web Menarik</div>
+        <div class="link-display">Verlanovich</div>
         <div class="link-labels"><span class="label-chip">Web Link Collection</span></div>
       </div>
       <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -707,7 +754,8 @@
 
     <a href="https://justpaste.it/verlandead" target="_blank" rel="noopener" class="link-card">
       <div class="link-body">
-        <div class="link-platform">Kumpulan Akun Mati</div>
+        <div class="link-platform">Kumpulan Akun Lainnya</div>
+        <div class="link-display">Verlanovich</div>
         <div class="link-labels"><span class="label-chip">Dead Account Collection</span></div>
       </div>
       <svg class="link-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -721,13 +769,28 @@
       <a href="https://claude.ai" target="_blank" rel="noopener">Claude AI</a>
       dari <a href="https://anthropic.com" target="_blank" rel="noopener">Anthropic</a>
     </p>
-    <p class="footer-note">© 2025 Ado Ahi Rikardo · All rights reserved</p>
+    <p class="footer-note">© 2026 Ado Ahi Rikardo · All rights reserved</p>
   </footer>
 
 </div>
 
 <script>
-  /* ── Theme (persisted) ── */
+  /* ── WIB Clock ── */
+  (function(){
+    function updateWIB(){
+      const now = new Date();
+      // WIB = UTC+7
+      const wib = new Date(now.getTime() + (7 * 60 * 60 * 1000));
+      const hh = String(wib.getUTCHours()).padStart(2,'0');
+      const mm = String(wib.getUTCMinutes()).padStart(2,'0');
+      const ss = String(wib.getUTCSeconds()).padStart(2,'0');
+      const el = document.getElementById('wib-time');
+      if(el) el.textContent = hh + ':' + mm + ':' + ss;
+    }
+    updateWIB();
+    setInterval(updateWIB, 1000);
+  })();
+
   (function(){
     const saved = localStorage.getItem('theme');
     const sys   = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
